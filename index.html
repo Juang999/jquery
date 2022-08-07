@@ -27,7 +27,13 @@
     <div class="boxes">Baris ke-3</div>
 
     <script>
-
+        $(document).ready(function () {
+            $('h1').css('color', 'green');
+            $('#box1').css('color', 'red');
+            $('.boxes').css('color', 'yellow');
+            $('.boxes:last').css('color', 'blue');
+            $('.boxes:eq(1)').css('color', 'grey');
+        });
     </script>
 </body>
 </html>

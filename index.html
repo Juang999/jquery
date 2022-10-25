@@ -13,6 +13,10 @@
         h1 {
             color: red;
         }
+
+        h1:hover {
+            color:black
+        }
     </style>
     <script src="jquery.js"></script>
     <title>Document</title>
@@ -26,13 +30,37 @@
     <div class="boxes">Baris ke-2</div>
     <div class="boxes">Baris ke-3</div>
 
+    <form>
+        <input type="tel" id="inputText">
+        <br>
+        <button type="submit">submit</button>
+    </form>
+
     <script>
         $(document).ready(function () {
-            $('h1').css('color', 'green');
-            $('#box1').css('color', 'red');
-            $('.boxes').css('color', 'yellow');
-            $('.boxes:last').css('color', 'blue');
-            $('.boxes:eq(1)').css('color', 'grey');
+            $('img').css('width', '50%');
+            $('img').css('height', '400px');
+            $('h1').css('color', 'black');
+
+            $('h1').click(function () {
+                $('h1').css('color', 'aqua');
+            });
+
+            $('h1').mouseenter(function () {
+                $('h1').css('color', 'red');
+            });
+
+            $('h1').mouseleave(function () {
+                $('h1').css('color', 'black');
+            });
+
+            $('form').submit(function () {
+                var tulisan = $('#inputText').val();
+                $('h1').text(tulisan);
+
+                // menghentikan reload dari tag form
+                event.preventDefault()
+            });
         });
     </script>
 </body>
